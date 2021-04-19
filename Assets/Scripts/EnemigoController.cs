@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemigoController : MonoBehaviour
 {   
     //rango de vision y de ataque para realizar las acciones hacia el Player
+
+    public static EnemigoController objEnemy;
     public float radioVision;
     public float radioAtaque;
     public float velocidad;
@@ -14,16 +16,35 @@ public class EnemigoController : MonoBehaviour
     Animator anim; 
 
 
+    //
+    private float movHorizontanl;
+
+    public bool movimiento = false;
+
+
+    private void Awake(){ //primera funcion
+        objEnemy = this;
+    }
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
-        initialPosition = transform.position;
         anim = GetComponent<Animator>();
+        initialPosition = transform.position;
     }
 
     void Update()
     {
+        MovimientoPlayer();
+
+    }
+
+     void MovimientoPlayer(){
+        movHorizontanl = Input.GetAxisRaw("Horizontal");
+        //movVertical = Input.GetAxisRaw("Vertical");
+        movimiento =(movHorizontanl !=0f);
+
         //por defecto el enemigo volvera a su posicion inicial cuando no este en persecucion del player
         Vector3 target = initialPosition;
 
@@ -56,21 +77,27 @@ public class EnemigoController : MonoBehaviour
         float distancia = Vector3.Distance(target,transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
+        
+
         //si es el enemigo y esta en el rango de ataque nos paramos y le atacamos
         if(target != initialPosition && distancia < radioAtaque){
             //aqui le atacariamos pero por ahora simplemente cambiamos la animacion
            // anim.SetFloat("movX",dir.x);
            // anim.SetFloat("movY",dir.y);
            // anim.Play("Enemigo1_caminar",-1,0);//congela la animacion de andar
+          
+           anim.SetBool("Enemy1_isCaminando",false);
         }else{
             rb.MovePosition(transform.position + dir * velocidad * Time.deltaTime);
 
             //al movernos establecemos la animacion de movimiento
-
+            // Debug.Log("regresa");
            // anim.speed = 1;
            // anim.SetFloat("movX",dir.x);
            // anim.SetFloat("movY",dir.y);
            // anim.SetBool("Enemigo1_caminar",true);
+           flip(movHorizontanl);//mover izquierda derecha y escala
+           anim.SetBool("Enemy1_isCaminando",true);
 
         }
 
@@ -79,6 +106,7 @@ public class EnemigoController : MonoBehaviour
             transform.position = initialPosition;
             //y cambiamos la animacion de nuevo a idIn
             //anim.SetBool("Enemigo1_caminar",false);
+            anim.SetBool("Enemy1_isCaminando",false);
         }
 
         //El enemigo se mueve en direccion al target
@@ -88,7 +116,10 @@ public class EnemigoController : MonoBehaviour
         // debug la persecucion , creara una linea en direccion al jugador
         Debug.DrawLine(transform.position, target, Color.green);
 
-    }
+
+     }
+
+
 
     //permirira dibujar el radio de vision sobre la scena  , dibujara una sphera
     void OnDrawGizmos(){
@@ -101,6 +132,23 @@ public class EnemigoController : MonoBehaviour
     private bool IsPlayerInRange(float range)
     {
         return Vector3.Distance(transform.position, Player.transform.position) <= range;
+    }
+
+
+
+    private void flip(float _xValor){
+        Vector3 xscalar = transform.localScale;
+        if(_xValor < 0)
+            xscalar.x =Mathf.Abs(xscalar.x)*-1;
+        else if(_xValor > 0)
+            xscalar.x =Mathf.Abs(xscalar.x);
+        
+        transform.localScale =xscalar;
+
+    }
+
+    private void OnDestroy(){
+        objEnemy = null;
     }
 
 
