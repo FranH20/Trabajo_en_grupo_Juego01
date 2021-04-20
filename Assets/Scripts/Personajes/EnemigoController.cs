@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class EnemigoController : MonoBehaviour
 {   
-    //rango de vision y de ataque para realizar las acciones hacia el Player
-
     public static EnemigoController objEnemy;
-    public float radioVision;
-    public float radioAtaque;
-    public float velocidad;
-    Vector3 initialPosition; //posicion a donde volvera cuando este en reposo
+
+    Vector3 initialPosition;
     GameObject Player;
     Rigidbody2D rb;
     Animator anim; 
 
+    //Estadisticas
+    [Header("Estadistica del Enemigo")]
+    public float vida;
+    public float vidaMax;
+    public float velocidad;
+    public float radioVision;
+    public float radioAtaque;
+ 
+    //public Image barraVida;
 
     //
     private float movHorizontanl;
 
     public bool movimiento = false;
-
 
     private void Awake(){ //primera funcion
         objEnemy = this;
@@ -48,7 +52,6 @@ public class EnemigoController : MonoBehaviour
         //por defecto el enemigo volvera a su posicion inicial cuando no este en persecucion del player
         Vector3 target = initialPosition;
 
-        //
         RaycastHit2D hit = Physics2D.Raycast(
             transform.position,
             Player.transform.position - transform.position,
@@ -69,39 +72,27 @@ public class EnemigoController : MonoBehaviour
             }
         }
 
-
-
-        //calculamos la distancia del Objeto enemigo con la posicion del juegador(tag player)
-        //float distancia = Vector3.Distance(Player.transform.position, transform.position);
         //Calculamos la distancia y direccion actual hasta el target
         float distancia = Vector3.Distance(target,transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
-        
-
         //si es el enemigo y esta en el rango de ataque nos paramos y le atacamos
         if(target != initialPosition && distancia < radioAtaque){
             //aqui le atacariamos pero por ahora simplemente cambiamos la animacion
-           // anim.SetFloat("movX",dir.x);
-           // anim.SetFloat("movY",dir.y);
-           // anim.Play("Enemigo1_caminar",-1,0);//congela la animacion de andar
-          
-           anim.SetBool("Enemy1_isCaminando",false);
+
+            PlayerController.obj.getDamage(10);
+            anim.SetBool("Enemy1_isCaminando",false);
+
         }else{
             rb.MovePosition(transform.position + dir * velocidad * Time.deltaTime);
-
             //al movernos establecemos la animacion de movimiento
-            // Debug.Log("regresa");
            // anim.speed = 1;
-           // anim.SetFloat("movX",dir.x);
-           // anim.SetFloat("movY",dir.y);
-           // anim.SetBool("Enemigo1_caminar",true);
+
            flip(movHorizontanl);//mover izquierda derecha y escala
            anim.SetBool("Enemy1_isCaminando",true);
-
         }
 
-        //una ultima comprobacion para evitar busg forzando la posicion inicial
+        //una ultima comprobacion para evitar bug forzando la posicion inicial
         if(target == initialPosition && distancia < 0.02f){
             transform.position = initialPosition;
             //y cambiamos la animacion de nuevo a idIn
@@ -129,10 +120,10 @@ public class EnemigoController : MonoBehaviour
     }
 
 
-    private bool IsPlayerInRange(float range)
+   /* private bool IsPlayerInRange(float range)
     {
         return Vector3.Distance(transform.position, Player.transform.position) <= range;
-    }
+    }*/
 
 
 
@@ -146,6 +137,22 @@ public class EnemigoController : MonoBehaviour
         transform.localScale =xscalar;
 
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bala"))
+        {
+            
+            if(vida<= 0){
+                gameObject.SetActive(false);
+            }else{
+                vida=vida-10;
+            }
+
+        }
+    } 
+
+
 
     private void OnDestroy(){
         objEnemy = null;

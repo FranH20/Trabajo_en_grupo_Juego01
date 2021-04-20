@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-  // public float velX;
-  // public float velY=0;
    Rigidbody2D rb;
    public float velocidad_disparo;
 
-   private Vector3 MousePosition,ObjetoPosition;
+   //private Vector3 MousePosition,ObjetoPosition;
    private Vector3 positionPasada;
 
     void Start()
@@ -25,8 +23,6 @@ public class Bala : MonoBehaviour
             transform.right = transform.position - positionPasada;
             positionPasada = transform.position;
         }
-
-        //rb.velocity =new Vector2(velX,velY); 
-        Destroy(gameObject,5f);
+        Destroy(gameObject,1f);
     }
 }
