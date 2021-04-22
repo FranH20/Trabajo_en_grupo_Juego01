@@ -26,6 +26,10 @@ public class EnemigoController : MonoBehaviour
 
     public bool movimiento = false;
 
+    public GameObject Room;
+
+
+
     private void Awake(){ //primera funcion
         objEnemy = this;
     }
@@ -142,11 +146,11 @@ public class EnemigoController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bala"))
         {
-            
+            vida=vida-10;
             if(vida<= 0){
-                gameObject.SetActive(false);
-            }else{
-                vida=vida-10;
+                Room.GetComponent<Src_room>().VerificarEnemigosDead();
+              //  gameObject.SetActive(false);
+                Destroy(gameObject);
             }
 
         }

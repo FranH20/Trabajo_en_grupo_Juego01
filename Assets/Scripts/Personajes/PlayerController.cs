@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float vidaMax;
     public float vida;
     public float score;
-    public float velocidad;
+    public float velocitdad;
 
     [Header("Barra Vida del Jugador")]
     private bool inmune = false;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public float inmunetiempo = 1f;
 
     private Rigidbody2D rb;
-    Animator anim;
+    //Animator anim;
 
 
     private void Awake(){ //primera funcion
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+       // anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
 
     void FixedUpdate(){
-        rb.velocity =new Vector2(movHorizontanl * velocidad,movVertical * velocidad );
+        rb.velocity =new Vector2(movHorizontanl * velocitdad,movVertical * velocitdad );
     }
 
     void MovimientoPlayer(){
@@ -67,9 +67,9 @@ public class PlayerController : MonoBehaviour
         flip(movHorizontanl);//mover izquierda derecha y escala
 
             if(movimiento){
-                anim.SetBool("estaCorriendo",true);
+                //anim.SetBool("estaCorriendo",true);
             }else{
-              anim.SetBool("estaCorriendo",false);
+             // anim.SetBool("estaCorriendo",false);
             }
 
     }
