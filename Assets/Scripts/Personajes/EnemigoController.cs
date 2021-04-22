@@ -26,7 +26,7 @@ public class EnemigoController : MonoBehaviour
 
     public bool movimiento = false;
 
-    public GameObject Room;
+    //public GameObject Room;
 
 
 
@@ -148,8 +148,9 @@ public class EnemigoController : MonoBehaviour
         {
             vida=vida-10;
             if(vida<= 0){
-                Room.GetComponent<Src_room>().VerificarEnemigosDead();
+                //Room.GetComponent<Src_room>().VerificarEnemigosDead();
               //  gameObject.SetActive(false);
+                Src_room.obj.VerificarEnemigosDead();
                 Destroy(gameObject);
             }
 
