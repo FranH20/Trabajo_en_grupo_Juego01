@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arma : MonoBehaviour
+public class ArmaE : MonoBehaviour
 {
     public GameObject Bala;
    // public float fireRate = 0.5f;

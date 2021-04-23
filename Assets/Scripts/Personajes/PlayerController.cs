@@ -129,6 +129,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bala"))
+        {
+           getDamage(20);
+
+        }
+    } 
+
 
     private void OnDestroy(){
         obj = null;
