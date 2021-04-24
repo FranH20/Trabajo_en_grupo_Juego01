@@ -74,9 +74,10 @@ public class Src_room : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {   
         ContadorEnemigosSalaActual = enemigos.Length;
-        Debug.Log(" enemigos Sala : " +ContadorEnemigosSalaActual);     
+        
         if (collision.gameObject.CompareTag("Player"))
         {   
+            Debug.Log(" enemigos Sala : " +ContadorEnemigosSalaActual);     
             if(FirstTimeEnter == false){
                 FirstTimeEnter = true;
                 open= false;
