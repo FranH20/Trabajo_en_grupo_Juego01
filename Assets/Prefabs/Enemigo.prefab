@@ -174,6 +174,6 @@ MonoBehaviour:
   vida: 100
   vidaMax: 100
   velocidad: 5
-  radioVision: 4
+  radioVision: 3.5
   radioAtaque: 0.7
   movimiento: 0
