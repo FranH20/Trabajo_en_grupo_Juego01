@@ -6,6 +6,8 @@ public class Bala : MonoBehaviour
 {
    Rigidbody2D rb;
    public float velocidad_disparo;
+   public float tiempoVida = 1f;
+   
 
    //private Vector3 MousePosition,ObjetoPosition;
    private Vector3 positionPasada;
@@ -16,6 +18,7 @@ public class Bala : MonoBehaviour
         rb.velocity = transform.right * velocidad_disparo;
         positionPasada = transform.position;
     }
+    
 
     void Update()
     {
@@ -23,6 +26,6 @@ public class Bala : MonoBehaviour
             transform.right = transform.position - positionPasada;
             positionPasada = transform.position;
         }
-        Destroy(gameObject,1f);
+        Destroy(gameObject,tiempoVida);
     }
 }

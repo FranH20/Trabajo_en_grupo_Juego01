@@ -34,6 +34,8 @@ public class EnemigoPowerUpController : MonoBehaviour
                 //Room.GetComponent<Src_room>().VerificarEnemigosDead();
               //  gameObject.SetActive(false);
                 //Src_room.obj.VerificarEnemigosDead();
+                Game.obj.addScore(20);
+                Src_room.obj.RestarEnemigosDead();
                 Destroy(gameObject);
             }
 

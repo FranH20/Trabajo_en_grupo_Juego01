@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ArmaEn : MonoBehaviour
 {
-     public GameObject Bala;
+    public GameObject Bala;
+    public float velocidadBala;
+    public float tiempoVida;
+
     void Start()
     {
         InvokeRepeating("fire", 3.0f, 2.0f);
@@ -18,9 +21,14 @@ public class ArmaEn : MonoBehaviour
 
     
     void fire(){
+        Bala.GetComponent<Bala>().velocidad_disparo = velocidadBala;
+        Bala.GetComponent<Bala>().tiempoVida = tiempoVida;
         Instantiate(Bala,transform.position,transform.rotation);
         //Instantiate(Bala,transform.position,Quaternion.identity);
         //Instantiate(Bala,transform.position,transform.rotation);
      //   Instantiate(Bala,transform.position,transform.rotation);
     }
+    
+
+
 }

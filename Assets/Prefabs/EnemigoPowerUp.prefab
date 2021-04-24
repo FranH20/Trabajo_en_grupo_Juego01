@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513941572071618076}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.727, y: -0.83, z: 0}
   m_LocalScale: {x: 0.2, y: 0.20000003, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7513941572342059209}
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  velocidadBala: 20
+  tiempoVida: 0.8
 --- !u!1 &7513941572210830356
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513941572210830356}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.898, y: -0.604, z: 0}
   m_LocalScale: {x: 0.2, y: 0.20000003, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7513941572342059209}
@@ -192,6 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  velocidadBala: 20
+  tiempoVida: 0.8
 --- !u!1 &7513941572342059212
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +207,7 @@ GameObject:
   - component: {fileID: 7513941572342059209}
   - component: {fileID: 7513941572342059214}
   - component: {fileID: 7513941572342059215}
+  - component: {fileID: 6484007783485092397}
   - component: {fileID: 7513941572342059208}
   m_Layer: 0
   m_Name: EnemigoPowerUp
@@ -268,7 +273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 2776923514048886383, guid: fe4dc3156daa8dcd68220fdd69971158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -293,7 +298,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.041982293, y: -0.071629286}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -304,8 +309,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.47074997, y: 0.9578481}
   m_EdgeRadius: 0
+--- !u!70 &6484007783485092397
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7513941572342059212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01811409, y: -0.058391213}
+  m_Size: {x: 0.36144257, y: 0.771868}
+  m_Direction: 0
 --- !u!114 &7513941572342059208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f053e362db604d4cad7a4294296384f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 50
+  vida: 100
   vidaMax: 100
 --- !u!1 &7513941572558449958
 GameObject:
@@ -346,7 +367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513941572558449958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.756, z: 0}
   m_LocalScale: {x: 0.20000009, y: 0.20000006, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7513941572342059209}
@@ -416,6 +437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  velocidadBala: 20
+  tiempoVida: 0.8
 --- !u!1 &7513941572931973209
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513941572931973209}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: -1.015, y: 0.481, z: 0}
   m_LocalScale: {x: 0.2, y: 0.20000003, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7513941572342059209}
@@ -512,3 +535,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  velocidadBala: 20
+  tiempoVida: 0.8

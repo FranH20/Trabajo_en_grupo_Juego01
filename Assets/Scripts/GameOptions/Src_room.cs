@@ -11,13 +11,13 @@ public class Src_room : MonoBehaviour
 
     public GameObject[] enemigos;
     public  bool AllDead;
-    public static int ContadorEnemigosSalaActual = 1;
+    public  static int ContadorEnemigosSalaActual;
     private bool FirstTimeEnter;
 
     void Start()
     {
         doors = GrupoPuertas.objGp.doors;
-        VerificarEnemigosDead();
+        VerificarPuertas();
     }
 
     private void Awake(){ //primera funcion
@@ -27,7 +27,7 @@ public class Src_room : MonoBehaviour
     void Update()
     {
          //VerificarEnemigosDead();
-         VerificarPuertas();
+         
     }
 
     void VerificarPuertas(){
@@ -50,15 +50,17 @@ public class Src_room : MonoBehaviour
 
     }
 
-    public void VerificarEnemigosDead(){
-
+    public void RestarEnemigosDead(){
+              
             ContadorEnemigosSalaActual = ContadorEnemigosSalaActual - 1;
+             Debug.Log(" enemigos restantes : " +ContadorEnemigosSalaActual);
             if(ContadorEnemigosSalaActual == 0){
                  AllDead = true;
                     open = true;
+                    VerificarPuertas();
             }
 
-           // Debug.Log(" enemigos Sala : " +enemigos.Length);     
+              
             /*for(int i=0;i<enemigos.Length;i++){
                 if(enemigos[i]==null){
                     AllDead = true;
@@ -72,15 +74,15 @@ public class Src_room : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D collision)
-    {   
-        ContadorEnemigosSalaActual = enemigos.Length;
-        
+    {           
         if (collision.gameObject.CompareTag("Player"))
         {   
-            Debug.Log(" enemigos Sala : " +ContadorEnemigosSalaActual);     
+            ContadorEnemigosSalaActual = enemigos.Length;
+            Debug.Log(" enemigos en Sala : " +ContadorEnemigosSalaActual);     
             if(FirstTimeEnter == false){
                 FirstTimeEnter = true;
                 open= false;
+                VerificarPuertas();
                 //Debug.Log(" enemigos Sala : " +enemigos.Length); 
             }
 

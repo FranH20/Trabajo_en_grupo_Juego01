@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public Image barraVida;
     public float vidaMax;
     public float vida;
-    public float score;
+    //public float score;
     public float velocitdad;
 
     [Header("Barra Vida del Jugador")]

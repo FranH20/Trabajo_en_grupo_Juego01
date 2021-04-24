@@ -150,7 +150,9 @@ public class EnemigoController : MonoBehaviour
             if(vida<= 0){
                 //Room.GetComponent<Src_room>().VerificarEnemigosDead();
               //  gameObject.SetActive(false);
-                Src_room.obj.VerificarEnemigosDead();
+                Game.obj.addScore(10);
+               //Debug.Log("a");
+                Src_room.obj.RestarEnemigosDead();
                 Destroy(gameObject);
             }
 
