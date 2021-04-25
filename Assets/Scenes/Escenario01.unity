@@ -25385,7 +25385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 35
   tiempoVida: 0.25
 --- !u!212 &479244198
@@ -25483,7 +25483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 35
   tiempoVida: 0.25
 --- !u!212 &508886210
@@ -25567,7 +25567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 35
   tiempoVida: 0.25
 --- !u!212 &521290789

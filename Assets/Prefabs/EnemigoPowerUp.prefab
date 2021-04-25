@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513941572071618076}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.727, y: -0.83, z: 0}
+  m_LocalPosition: {x: 0.8, y: -0.11, z: 0}
   m_LocalScale: {x: 0.2, y: 0.20000003, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7513941572342059209}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 20
   tiempoVida: 0.8
 --- !u!1 &7513941572210830356
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 20
   tiempoVida: 0.8
 --- !u!1 &7513941572342059212
@@ -367,7 +367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513941572558449958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.756, z: 0}
+  m_LocalPosition: {x: 0.09, y: 0.87, z: 0}
   m_LocalScale: {x: 0.20000009, y: 0.20000006, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7513941572342059209}
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 20
   tiempoVida: 0.8
 --- !u!1 &7513941572931973209
@@ -534,6 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee04a62c2b78fe74a8ae66f02fb8409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bala: {fileID: 2325805758306451112, guid: af4bcd3a04890084aa722d13fbdc7f88, type: 3}
+  Bala: {fileID: 1116505150279467940, guid: 748f1c7299cde0b429abbf10366dbcf1, type: 3}
   velocidadBala: 20
   tiempoVida: 0.8
