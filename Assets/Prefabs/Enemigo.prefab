@@ -12,15 +12,15 @@ GameObject:
   - component: {fileID: 6184350357282273279}
   - component: {fileID: 6184350357282273275}
   - component: {fileID: 6184350357282273274}
-  - component: {fileID: 6184350357282273277}
   - component: {fileID: -8817310420046901767}
   - component: {fileID: 6184350357282273278}
+  - component: {fileID: 6818309542395446977}
   m_Layer: 3
   m_Name: Enemigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6184350357282273276
 Transform:
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &6184350357282273277
+--- !u!58 &-8817310420046901767
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,25 +140,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0039011836, y: -0.1656201}
-  serializedVersion: 2
-  m_Radius: 0.3590345
---- !u!58 &-8817310420046901767
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6184350357282273249}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
   m_Offset: {x: -0.003901184, y: -0.1656201}
   serializedVersion: 2
-  m_Radius: 0.3590345
+  m_Radius: 1
 --- !u!114 &6184350357282273278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,4 +160,21 @@ MonoBehaviour:
   velocidad: 5
   radioVision: 3.5
   radioAtaque: 0.7
+  damageEnemy: 40
   movimiento: 0
+--- !u!58 &6818309542395446977
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184350357282273249}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1

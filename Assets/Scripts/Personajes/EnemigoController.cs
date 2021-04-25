@@ -18,7 +18,7 @@ public class EnemigoController : MonoBehaviour
     public float velocidad;
     public float radioVision;
     public float radioAtaque;
- 
+    public int damageEnemy; 
     //public Image barraVida;
 
     //
@@ -83,8 +83,8 @@ public class EnemigoController : MonoBehaviour
         //si es el enemigo y esta en el rango de ataque nos paramos y le atacamos
         if(target != initialPosition && distancia < radioAtaque){
             //aqui le atacariamos pero por ahora simplemente cambiamos la animacion
-
-            PlayerController.obj.getDamage(10);
+            
+            PlayerController.obj.getDamage(damageEnemy);
             anim.SetBool("Enemy1_isCaminando",false);
 
         }else{

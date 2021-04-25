@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2701882414209470782
 Transform:
@@ -138,9 +138,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 80
   vidaMax: 80
-  velocidad: 4
+  velocidad: 12
   radioVision: 3.5
-  radioAtaque: 1.5
+  radioAtaque: 1
+  damageEnemy: 20
   movimiento: 0
 --- !u!95 &2701882414209470771
 Animator:
