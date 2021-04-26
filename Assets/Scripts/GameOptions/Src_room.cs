@@ -12,6 +12,7 @@ public class Src_room : MonoBehaviour
     public GameObject[] enemigos;
     public  bool AllDead;
     public  static int ContadorEnemigosSalaActual;
+    public int NumeroEnemigos;
     private bool FirstTimeEnter;
 
     void Start()
@@ -51,9 +52,9 @@ public class Src_room : MonoBehaviour
     }
 
     public void RestarEnemigosDead(){
-              
             ContadorEnemigosSalaActual = ContadorEnemigosSalaActual - 1;
-             Debug.Log(" enemigos restantes : " +ContadorEnemigosSalaActual);
+            NumeroEnemigos = ContadorEnemigosSalaActual;
+            Debug.Log(" enemigos restantes : " +ContadorEnemigosSalaActual);
             if(ContadorEnemigosSalaActual == 0){
                  AllDead = true;
                     open = true;
@@ -77,9 +78,10 @@ public class Src_room : MonoBehaviour
     {           
         if (collision.gameObject.CompareTag("Player"))
         {   
-            ContadorEnemigosSalaActual = enemigos.Length;
-            Debug.Log(" enemigos en Sala : " +ContadorEnemigosSalaActual);     
             if(FirstTimeEnter == false){
+                ContadorEnemigosSalaActual = enemigos.Length;
+                NumeroEnemigos = enemigos.Length;
+                Debug.Log(" enemigos en Sala : " +ContadorEnemigosSalaActual);    
                 FirstTimeEnter = true;
                 open= false;
                 VerificarPuertas();

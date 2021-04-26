@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager obj;
     public Text txt_score;
-
+    public Text enemigosSala;
     //public Transform UIPanel;
 
 
@@ -16,7 +16,8 @@ public class UIManager : MonoBehaviour
         obj = this;
     }
     public void updateScore()
-    {
+    {   
+        enemigosSala.text = "" + Src_room.obj.NumeroEnemigos;
         txt_score.text = "" + Game.obj.score;
     }
     public void startGame()
