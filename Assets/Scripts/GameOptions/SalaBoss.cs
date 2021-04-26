@@ -9,6 +9,8 @@ public class SalaBoss : MonoBehaviour
     public GameObject BossFinal;
     public bool EstadoSala = false;
 
+    public GameObject CameraCinematica1;
+
     private void Awake(){ //primera funcion
         obj = this;
     }
@@ -18,6 +20,14 @@ public class SalaBoss : MonoBehaviour
     }
     void Update()
     {
+        
+    }
+
+    IEnumerator returne(){
+        yield return new WaitForSeconds(5.2f);
+        CameraCinematica1.SetActive(false);
+        Debug.Log("s");
+        
         
     }
 
@@ -32,6 +42,9 @@ public class SalaBoss : MonoBehaviour
                 EstadoSala = true; //activamos para que ahora no cuente los enemigos invocados como enemigos de sala
                 Src_room.obj.cerrarPuertas();
                 Src_room.obj.VerificarPuertas();
+
+                CameraCinematica1.SetActive(true);
+                StartCoroutine ("returne");
                
             }
 
