@@ -98,6 +98,7 @@ MonoBehaviour:
   Bala: {fileID: 4695246403104144940, guid: 62997c4f97f34e5c998c1f92cabf16c0, type: 3}
   velocidadBala: 10
   tiempoVida: 0.8
+  velocidadInvocacion: 0
 --- !u!1 &1219019885283379916
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &1577432315974479780
 RectTransform:
@@ -151,7 +152,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3143704173854238117
 Transform:
@@ -218,7 +219,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &6263163184067124728
 RectTransform:
@@ -317,7 +318,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &9044814458134555476
 RectTransform:
@@ -390,7 +391,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &7972276871157497268
 RectTransform:
@@ -509,6 +510,7 @@ MonoBehaviour:
   Bala: {fileID: 4695246403104144940, guid: 62997c4f97f34e5c998c1f92cabf16c0, type: 3}
   velocidadBala: 10
   tiempoVida: 0.8
+  velocidadInvocacion: 0
 --- !u!1 &2984395905161368904
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +527,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &8299771259421801520
 RectTransform:
@@ -597,12 +599,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5107070617944160512}
+  - component: {fileID: 69589348008221318}
+  - component: {fileID: 5620546277958235755}
   m_Layer: 0
   m_Name: BossFinal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5107070617944160512
 Transform:
@@ -621,6 +625,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &69589348008221318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371515595398021064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c9fe27c336b89645b6e7050e342f438, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &5620546277958235755
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371515595398021064}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &3813702312252846135
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +712,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &2623495205697704347
 RectTransform:
@@ -894,6 +968,7 @@ MonoBehaviour:
   Bala: {fileID: 4695246403104144940, guid: 62997c4f97f34e5c998c1f92cabf16c0, type: 3}
   velocidadBala: 10
   tiempoVida: 0.8
+  velocidadInvocacion: 0
 --- !u!1 &6299723519563506995
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +1045,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 6617411515208012070, guid: 43cd6ebb7e79f004180c4cb764be52f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -989,7 +1064,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6299723519563506995}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1019,7 +1094,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 1.734375, y: 2.078125}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1035,7 +1110,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6299723519563506995}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1066,8 +1141,8 @@ MonoBehaviour:
   enemigo2: {fileID: 2701882414209470772, guid: bec6a2da2fad22242959e8c7b6941819, type: 3}
   enemigo3: {fileID: 7513941572342059212, guid: 0cca15e7a6c6d7427ac3080739fa7049, type: 3}
   TiempoRandomInvocacion: 0.2
-  barraVida: {fileID: 358620995317821287}
   BossActivo: {fileID: 1219019885283379916}
+  barraVida: {fileID: 358620995317821287}
 --- !u!1 &7156371748843695098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1241,7 @@ MonoBehaviour:
   Bala: {fileID: 4695246403104144940, guid: 62997c4f97f34e5c998c1f92cabf16c0, type: 3}
   velocidadBala: 10
   tiempoVida: 0.8
+  velocidadInvocacion: 0
 --- !u!1 &8362647093170146723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,3 +1340,4 @@ MonoBehaviour:
   Bala: {fileID: 4695246403104144940, guid: 62997c4f97f34e5c998c1f92cabf16c0, type: 3}
   velocidadBala: 10
   tiempoVida: 0.8
+  velocidadInvocacion: 0
