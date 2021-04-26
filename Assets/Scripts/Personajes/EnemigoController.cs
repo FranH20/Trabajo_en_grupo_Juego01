@@ -152,7 +152,10 @@ public class EnemigoController : MonoBehaviour
               //  gameObject.SetActive(false);
                 Game.obj.addScore(10);
                //Debug.Log("a");
-                Src_room.obj.RestarEnemigosDead();
+               //esto mas que anda para que no cuente a los enemigos invocados a eliminar
+                if(SalaBoss.obj.EstadoSala==false){
+                     Src_room.obj.RestarEnemigosDead();
+                }
                 Destroy(gameObject);
             }
 

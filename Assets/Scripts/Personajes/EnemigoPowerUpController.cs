@@ -35,7 +35,10 @@ public class EnemigoPowerUpController : MonoBehaviour
               //  gameObject.SetActive(false);
                 //Src_room.obj.VerificarEnemigosDead();
                 Game.obj.addScore(20);
-                Src_room.obj.RestarEnemigosDead();
+                //esto mas que anda para que no cuente a los enemigos invocados a eliminar
+                if(SalaBoss.obj.EstadoSala==false){
+                     Src_room.obj.RestarEnemigosDead();
+                }
                 Destroy(gameObject);
             }
 

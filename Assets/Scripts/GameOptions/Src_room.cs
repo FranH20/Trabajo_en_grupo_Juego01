@@ -31,7 +31,7 @@ public class Src_room : MonoBehaviour
          
     }
 
-    void VerificarPuertas(){
+    public void VerificarPuertas(){
 
         openDoors = doors[0].GetComponent<Scr_puertas>().locked;
         
@@ -49,6 +49,9 @@ public class Src_room : MonoBehaviour
             }
         }
 
+    }
+    public void cerrarPuertas(){
+        open = false;
     }
 
     public void RestarEnemigosDead(){

@@ -131,11 +131,19 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bala"))
+        /*if (collision.gameObject.CompareTag("Bala2"))
         {
            getDamage(20);
 
+        }*/
+        if (collision.gameObject.CompareTag("BalaBoss1"))
+        {
+           getDamage(5);
+
         }
+
+
+
     } 
 
 

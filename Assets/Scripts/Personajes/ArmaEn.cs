@@ -7,10 +7,12 @@ public class ArmaEn : MonoBehaviour
     public GameObject Bala;
     public float velocidadBala;
     public float tiempoVida;
+    public float velocidadInvocacion=0;
 
     void Start()
     {
-        InvokeRepeating("fire", 3.0f, 2.0f);
+        if(velocidadInvocacion==0f){velocidadInvocacion=2.0f;}//por defecto
+        InvokeRepeating("fire", 3.0f, velocidadInvocacion);
     }
 
     // Update is called once per frame
